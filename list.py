@@ -168,6 +168,6 @@
 # print(filtered_list)
 
 # 27) Python program to print duplicates from a list of integers
-list1 = [3, 2, 4, 7, 9, 6, 5, 8, 9, 4, 5, 6, 3, 2, 7, 1]
-list2 = list(set(list1))
-print(list2)
+# list1 = [3, 2, 4, 7, 9, 6, 5, 8, 9, 4, 5, 6, 3, 2, 7, 1]
+# list2 = list(set(list1))
+# print(list2)

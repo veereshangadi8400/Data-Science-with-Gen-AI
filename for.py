@@ -6,11 +6,11 @@
 # print(fact)
 
 # 2) Write a program in Python to reverse a word.
-word = 'mahesh'
-word2 = ''
-for i in word:
-    word2 = i + word2
-print(word2)
+# word = 'mahesh'
+# word2 = ''
+# for i in word:
+#     word2 = i + word2
+# print(word2)
 
 # 3) Write a Python program to reverse a number. 
 # 4) Write a program to display the first 7 multiples of 7. 

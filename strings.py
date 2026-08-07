@@ -212,11 +212,14 @@ name = 'mahesh babu!'
 # print(name2)
 
 # 36) Python program to split and join a string
-words = name.split(' ')
-print(words)
-name2 = ' '.join([words[0], words[1]])
-print(name2)
+# words = name.split(' ')
+# print(words)
+# name2 = ' '.join([words[0], words[1]])
+# print(name2)
 
-# 37) Python program to find uncommon words from two Strings 
+# 37) Python program to find uncommon words from two Strings
+
+
+
 # 38) Python program to Swap commas and dots in a String 
 # 39) Python program to get Permutation of a given string without using inbuilt function.

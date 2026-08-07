@@ -40,6 +40,6 @@
 # print(missing, additional)
  
 # 8) Program to find the difference between two lists using sets.
-list1 = [1, 2, 3, 4, 5, 6]
-list2 = [3, 4, 5, 6, 7, 8]
-print(set(list1).difference(set(list2)))
+# list1 = [1, 2, 3, 4, 5, 6]
+# list2 = [3, 4, 5, 6, 7, 8]
+# print(set(list1).difference(set(list2)))

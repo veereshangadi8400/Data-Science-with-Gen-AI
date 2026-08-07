@@ -73,10 +73,10 @@
 # print(frequency)
 
 # 15) Python – Test if tuple is distinct
-tup = (1, 2, 3, 4, 5)
-def is_distict(tup):
-    if len(tup) == len(set(tup)):
-        return True
-    else:
-        return False
-print(is_distict(tup))
+# tup = (1, 2, 3, 4, 5)
+# def is_distict(tup):
+#     if len(tup) == len(set(tup)):
+#         return True
+#     else:
+#         return False
+# print(is_distict(tup))

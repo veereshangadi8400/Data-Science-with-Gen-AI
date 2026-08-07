@@ -81,9 +81,9 @@
 # max_key = max(data.values())
 
 # 13) way to extract values of Particular Key in Nested dictionaries.
-employees = {
-    "emp1": {"name": "Alice", "role": "Developer", "salary": 90000},
-    "emp2": {"name": "Bob", "role": "Designer", "salary": 80000},
-    "emp3": {"name": "Charlie", "role": "Manager", "salary": 110000},
-}
-print(employees.get('emp3').get('role'))
+# employees = {
+#     "emp1": {"name": "Alice", "role": "Developer", "salary": 90000},
+#     "emp2": {"name": "Bob", "role": "Designer", "salary": 80000},
+#     "emp3": {"name": "Charlie", "role": "Manager", "salary": 110000},
+# }
+# print(employees.get('emp3').get('role'))

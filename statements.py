@@ -63,13 +63,15 @@
 
 # 10) Write a program that reads three positive numbers a, b, c and determines whether they can 
 # form the three sides of a triangle.
-a, b, c = 1, 2, 3
-if (a+b > c) and (b+c > a) and (a+c > b):
-    print('a, b, c can form triangle')
-else:
-    print('a, b, c cannot form a triangle')
+# a, b, c = 1, 2, 3
+# if (a+b > c) and (b+c > a) and (a+c > b):
+#     print('a, b, c can form triangle')
+# else:
+#     print('a, b, c cannot form a triangle')
 
-# 11) Whether the triangle will be an obtuse-angle, or a right-angle or an acute-angle triangle. 
+# 11) Whether the triangle will be an obtuse-angle, or a right-angle or an acute-angle triangle.
+
+
 # 12) If the triangle is an acute angle triangle, determine further whether the triangle is equilateral, 
 # isosceles, or scalene. 
 # 13) A toy vendor supplies three types of toys: Battery Based Toys, Key-based Toys, and Electrical 

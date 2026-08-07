@@ -213,13 +213,15 @@
 # print(fact)
 
 # 22) Find average of list of numbers entered through keyboard.
-n, i, sum = 8, 1, 0
-while i <= n:
-    sum += i
-    i += 1
-print(sum/n)
+# n, i, sum = 8, 1, 0
+# while i <= n:
+#     sum += i
+#     i += 1
+# print(sum/n)
 
-# 23) Take a number as input and check whether number is 
+# 23) Take a number as input and check whether number is
+
+
 # 24) calculate the value SUM = 1 + 4 – 9 + 16 – 25 + 36 – … for a given number. 
 # 25) calculate the value SUM = 12+22+32+42+52+62+72+.. for a given number. 
 # 26) calculate the value SUM = x – x3/3! + x5/5! – x7/7! + x9/9! - for a given number. 
