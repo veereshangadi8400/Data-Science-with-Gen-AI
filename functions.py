@@ -83,7 +83,7 @@
 #         return half * half
 #     if n%2 != 0:
 #         return x * pow(x, n-1)
-# print(pow(2, 9))
+# print(pow(2, 8))
 
 # 11. Write a program that can filter email ids in a list of strings by using the filter function. 
 # 12. Write a function that counts vowels and consonants in a word. 
