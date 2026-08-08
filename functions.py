@@ -24,30 +24,67 @@
 
 # 5. Write a program to print twin primes less than 1000. If two consecutive odd numbers are both 
 # prime then they are known as twin primes
-def is_prime(n):
-    if n <= 1:
-        return False
-    i = 2
-    while i*i <= n:
-        if n % i == 0:
-            return False
-        i += 1
-        return True
-limit = 1000
-start = 3
-pair_count = 0
-while start < limit:
-    if is_prime(start) and is_prime(start + 2):
-        print(start, start + 2)
-        pair_count += 1
-    start += 2
+# def is_prime(n):
+#     if n <= 1:
+#         return False
+#     i = 2
+#     while i*i <= n:
+#         if n % i == 0:
+#             return False
+#         i += 1
+#         return True
+# limit = 1000
+# start = 3
+# pair_count = 0
+# while start < limit:
+#     if is_prime(start) and is_prime(start + 2):
+#         print(start, start + 2)
+#         pair_count += 1
+#     start += 2
+
 # 6. Write a program that can filter odd numbers in a list by using the filter function
+# def odd(n):
+#     if n%2 == 0:
+#         return False
+#     else:
+#         return True
+# f = filter(odd, range(1, 100))
+# for i in f:
+#     print(i, end=' ')
+    
+
 # 7. Write a program that can map() to make a list whose elements are cubes of elements in a given 
-# list 
+# list
+# print(list((map(lambda x:x**3, range(1, 10)))))
+
 # 8. Write a program to zip 3 iterables of unequal lengths to get the resultant iteration of the size of 
-# the longest input iterable. Use ‘#’ in the place of missing values in the other 2 short iterables. 
-# 9. Write a program using reduce to find the sum of numbers of the given list 
-# 10. Write a recursive function to calculate x power n, given x and n as inputs 
+# the longest input iterable. Use ‘#’ in the place of missing values in the other 2 short iter
+# ables.
+# num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+# squares = [1, 4, 9, 16, 25]
+# cubes = [1, 8, 27, 64]
+# from itertools import zip_longest as zl
+# print(list(zl(num, squares, cubes, fillvalue='#')))
+
+# 9. Write a program using reduce to find the sum of numbers of the given list
+# from functools import reduce
+# from operator import add
+# print(reduce(lambda x, y: x+y, range(1, 10)))
+# print(reduce(add, range(1, 10)))
+
+# 10. Write a recursive function to calculate x power n, given x and n as inputs
+# def pow(x, n):
+#     if n == 0 :
+#         return 1
+#     if n < 0:
+#         return 1 / pow(x, -n)
+#     if n%2 == 0:
+#         half = pow(x, n//2)
+#         return half * half
+#     if n%2 != 0:
+#         return x * pow(x, n-1)
+# print(pow(2, 9))
+
 # 11. Write a program that can filter email ids in a list of strings by using the filter function. 
 # 12. Write a function that counts vowels and consonants in a word. 
 # 13. Write a Python function to check whether a number is "Perfect" or not. In number theory, a 
