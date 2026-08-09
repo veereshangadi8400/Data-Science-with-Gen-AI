@@ -85,15 +85,59 @@
 #         return x * pow(x, n-1)
 # print(pow(2, 8))
 
-# 11. Write a program that can filter email ids in a list of strings by using the filter function. 
-# 12. Write a function that counts vowels and consonants in a word. 
+# 11. Write a program that can filter email ids in a list of strings by using the filter function.
+# def email_ids(name):
+#     return name.endswith('@gmail.com')
+# # print(list(filter(email_ids, ['veeresh', 'vresh@gmail.com', 'mahesh', 'mahi@gmail.org'])))
+# print(list(filter(lambda x : x.endswith('.com') or x.endswith('.org'), ['veeresh', 'vresh@gmail.com', 'mahesh', 'mahi@gmail.org'])))
+
+# 12. Write a function that counts vowels and consonants in a word.
+# def count_vowel_consonants(word):
+#     word = word.lower()
+#     vowels = sum(1 for char in word if char in 'aeiou')
+#     consonants = sum(1 for char in word if char not in 'aeiou')
+#     return vowels, consonants
+# print(count_vowel_consonants('mahesh'))
+
 # 13. Write a Python function to check whether a number is "Perfect" or not. In number theory, a 
 # perfect number is a positive integer that is equal to the sum of its proper positive divisors, that is, 
-# the sum of its positive divisors excluding the number itself (also known as its aliquot sum). 
+# the sum of its positive divisors excluding the number itself (also known as its aliquot sum).
+# def perfect_number(n):
+#     if n <= 1:
+#         return False
+#     aliquot_sum = 0
+#     for i in range(1, (n//2) + 1):
+#         if n%i == 0:
+#             aliquot_sum += i
+#     return n == aliquot_sum
+# print(perfect_number(6))
+
 # 14.  Write a program to reverse any integer given as input. For example, if input is 120 then output is 
-# 21, for input -123 output is -321. 
+# 21, for input -123 output is -321.
+# def reverse_int(n):
+#     n = str(n)
+#     if n.startswith('-'):
+#         return -int(n[1:][::-1])
+#     return int(n[::-1])
+# print(reverse_int(-12345))
+
+
 # 15. Write a program to convert the given Roman numeral to an integer 
+# import roman
+# print(roman.fromRoman('MCMXCIV'))
+
 # 16. You are given an integer represented as a list of digits, where each digit [i] is the ith digit of the integer. 
 # The digits are ordered from most significant to least significant in left-to-right order. The integer does 
 # not contain any leading 0's. Increment the given integer by one and return the resulting list of 
-# digits. 
+# digits.
+def plus_one(digits):
+    n = len(digits)
+    for i in range(n-1, -1, -1):
+        if digits[i] < 9:
+            digits[i] += 1
+            return digits
+        digits[i] = 0
+    return [1] + digits
+print(plus_one([1, 2, 3]))  
+print(plus_one([4, 3, 2, 9])) 
+print(plus_one([9, 9, 9]))
