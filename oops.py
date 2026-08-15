@@ -39,54 +39,59 @@
 # Subtraction, multiplication, divide all these are the instance 
 # methods. 
 # variables
-class calculator:
-    def add(self, a, b):
-        return a+b
-    def sub(self, a, b):
-            return a-b
-    def multipy(self, a, b):
-            return a*b
-    def divide(self, a, b):
-        if b == 0:
-            return 'Division by zero is not allowed'
-        return a/b
-cal = calculator()
-print(cal.add(4,5))
-print(cal.sub(5,4))
-print(cal.multipy(4,5))
-print(cal.divide(6,3))
+# class calculator:
+#     def add(self, a, b):
+#         return a+b
+#     def sub(self, a, b):
+#             return a-b
+#     def multipy(self, a, b):
+#             return a*b
+#     def divide(self, a, b):
+#         if b == 0:
+#             return 'Division by zero is not allowed'
+#         return a/b
+# cal = calculator()
+# print(cal.add(4,5))
+# print(cal.sub(5,4))
+# print(cal.multipy(4,5))
+# print(cal.divide(6,3))
 
-# Write a Python program using classes, create a class Employee which initiates 
-# instance 
-# like 
-# emp_department 
-# and 
-# emp_assign_department, 
-# emp_id, 
-# methods 
-# emp_name, 
-# like 
-# emp_salary and 
-# calculate_emp_salary, 
-# and 
-# employee_details. 
-# Calculate_emp_salary method takes one arguments called hours which is 
-# number of hours worked by employee, if employee worked more than 50 hours then 
-# salary will b calculated as per the below formula. 
-# ot 
-# = 
-# hours 
-# salary = salary + (ot * (salary / 50)) – 
-# 50 
+# Write a Python program using classes, create a class Employee which initiates instance like emp_department and emp_assign_department, emp_id, 
+# emp_name, methods like emp_salary and calculate_emp_salary, and employee_details. Calculate_emp_salary method takes one arguments called hours which is 
+# number of hours worked by employee, if employee worked more than 50 hours then salary will b calculated as per the below formula. ot 
+# = hours salary = salary + (ot * (salary / 50)) – 50
+# class Employee:
+#     def __init__(self, emp_id, emp_name, emp_salary, emp_department):
+#         self.emp_department = emp_department
+#         self.emp_id = emp_id
+#         self.emp_name = emp_name
+#         self.emp_salary = emp_salary
+        
+#         def calculate_emp_salary(self, hours):
+#             ot = hours - 50
+#             salary = salary + (ot * (salary/50))
+#         def emp_assign_department(self):
+#             pass
+#         def employee_details(self):
+#             pass
+
 # Write a Python program using classes, create a class for banking operations and the 
 # class contains constructor to initiates the intake variables, some of the methods 
 # named as create_account, despite_amount, withdraw_amount and 
 # check_balance. 
-# 7. 
-# 8. 
-# Write 
-# a 
-# Python program using decorator, create a function called 
+# class banking_operations:
+#     def __init__(self):
+#         pass
+#     def create_account(self, details_for_account_creation):
+#         pass
+#     def despite_amount(self, amount):
+#         pass
+#     def withdraw_amount(self, amount):
+#         pass
+#     def check_balance(self, account_number):
+#         pass
+
+# Write a Python program using decorator, create a function called 
 # multiply_numbers which accepts the 2 parameters as input and return the value 
 # whenever the decorator is called.  
 # Write 
@@ -96,16 +101,46 @@ print(cal.divide(6,3))
 # parameters as input. These 2 functions perform the addition operation and 2 
 # decorators with type as the parameter for decorator return the value whenever the 
 # decorator is called. 
-# 9. 
-# Write a Python Program ‘Single Inheritance’, Define the Vehicle class which 
+# 9. Write a Python Program ‘Single Inheritance’, Define the Vehicle class which 
 # initialize make and model attributes. Define the Car class as a subclass of 
 # Vehicle with an additional attribute year. Implement a method detail in both 
-# Vehicle and Car classes to print out details such as make, model and 
-# year. 
+# Vehicle and Car classes to print out details such as make, model and year.
+# class Vehicle:
+#     def __init__(self, make, model):
+#         self.make = make
+#         self.model = model
+#     def detail(self):
+#         print('make: '+ self.make + ' model is '+ self.model )
+# class Car(Vehicle):
+#     def __init__(self, make, model, year):
+#         super().__init__(make, model)
+#         self.year = year
+#     def detail(self):
+#         super().detail() 
+#         print(f'year is : {self.year}')
+        
+# v1 = Vehicle('bmw', 'bmw24')
+# v1.detail()
+# c1 = Car('audi', 'audi23', 2018)
+# c1.detail()
+
 # 10. Write a Python Program using classes, the class has one attribute called c and two 
 # instance variables called a, b and has two methods called set_value and 
 # get_value. set_value method calculates instance variables and store in c 
-# attribute and get_value method will return the value of c. 
+# attribute and get_value method will return the value of c.
+# class cls:
+#     c = 0
+#     def __init__(self, a, b):
+#         self.a = a
+#         self.b = b
+#     def set_value(self):
+#         self.c = self.a + self.b
+#     def get_value(self):
+#         return self.c
+# c1 = cls(2, 3)
+# c1.set_value()
+# print(c1.get_value())
+
 # 11. Write a Python program using classes, Create a base class Media which initiates two 
 # instance variables title and isPlaying. It has two child classes called 
 # AudioPlayer and VideoPlayer. AudioPlayer will initiates two instance 
@@ -114,7 +149,39 @@ print(cal.divide(6,3))
 # pause(). play() method will return isPlaying as True and print ‘Playing 
 # audio 'Till2 Title Song' by ‘Mika Singh’...‘ similarly pause() 
 # method will return as False and print ‘Pausing audio 'Tillu2 Title 
-# Song' by ‘Mika Singh’...‘  and same for VideoPlayer class methods. 
+# Song' by ‘Mika Singh’...‘  and same for VideoPlayer class methods.
+class Media:
+    def __init__(self, title, isPlaying = False):
+        self.title, self.isPlaying = title, isPlaying
+    
+class AudioPlayer(Media):
+    def __init__(self, title, artist):
+        super().__init__(title, True)
+        self.artist = artist
+    def play(self):
+        self.isPlaying = True
+        print(f'playing audio {self.title} by {self.artist}')
+        return self.isPlaying
+    def pause(self):
+        print(f'pausing audio {self.title} by {self.artist}')
+        return False
+    
+class VideoPlayer(Media):
+    def __init__(self, title, director):
+        super().__init__(title, False)
+        self.director = director
+    def play(self):
+        self.isPlaying = True
+        print('playing audio {self.title} by {self.artist}}')
+        return self.isPlaying
+    def pause(self):
+        print('pausing audio {self.title} by {self.artist}')
+        return False
+
+audio = AudioPlayer("Tillu2 Title Song", "Mika Singh")
+print(audio.play())  
+print(audio.pause())
+
 # 12. Write a Python program using classes. Create a class called 
 # temperature_converter with two static methods called 
 # celsius_to_fahrenheit() and fahrenheit_to_celsius(). The 
