@@ -60,28 +60,57 @@ def getDistinctContinents(allUnivs):
         for country in countries:
             if country[0] == countryInUniv:
                 distinctContinents.add(country[5])
-            
     return distinctContinents
 
-print(getDistinctContinents(allUnivs))
+# print(getDistinctContinents(allUnivs))
 
-# def getTopIntRank(countryName, allUnivs):
-#     countryName = countryName.upper()
-#     # your code is here
-#     return (intRank, topUni)
+def getTopIntRank(countryName, allUnivs):
+    countryName = countryName.upper()
+    bestRank, bestUniv = None, None
+    for code in allUnivs:
+        if allUnivs[code][2].upper() == countryName:
+            if bestRank is None:
+                bestRank = int(allUnivs[code][0])
+                bestUniv = allUnivs[code][1]
+            else:
+                if bestRank > int(allUnivs[code][0]):
+                    bestRank = int(allUnivs[code][0])
+                    bestUniv  = allUnivs[code][1]
+    if bestRank is None:
+        return f'No university in {countryName}'
+    return(str(bestRank), bestUniv)
 
+# print(getTopIntRank('Usa', allUnivs))
 
-# def getTopNatRank(countryName, allUnivs):
-#     countryName = countryName.upper()
-#     # your code is here
-#     return (natRank, topUni)
+def getTopNatRank(countryName, allUnivs):
+    countryName = countryName.upper()
+    bestRank, bestUniv = None, None
+    for code in allUnivs:
+        if allUnivs[code][2].upper() == countryName:
+            if bestRank is None:
+                bestRank = allUnivs[code][3]
+                bestUniv = allUnivs[code][1]
+            else:
+                if int(bestRank) > int(allUnivs[code][3]):
+                    bestRank = allUnivs[code][3]
+                    bestUniv = allUnivs[code][1]
+    if bestRank is None:
+        return f'No University in {countryName}'
+    return (bestRank, bestUniv)
 
+# print(getTopNatRank('Japan', allUnivs))
 
-# def getAvgScore(countryName, allUnivs):
-#     countryName = countryName.upper()
-#     # your code is here
-#     return round(sum/count,2) 
+def getAvgScore(countryName, allUnivs):
+    countryName = countryName.upper()
+    scores = []
+    for code in allUnivs:
+        if allUnivs[code][2].upper() == countryName:
+            scores.append(float(allUnivs[code][6]))
+    if not scores:
+        return f'{countryName} not found'
+    return round(sum(scores)/len(scores),2) 
 
+print(getAvgScore('denmark', allUnivs))
 
 # def getRelativeScoreContinent(countryName, allUnivs):
 #     countryName = countryName.upper()
