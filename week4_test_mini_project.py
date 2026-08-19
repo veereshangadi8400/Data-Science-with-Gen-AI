@@ -110,20 +110,41 @@ def getAvgScore(countryName, allUnivs):
         return f'{countryName} not found'
     return round(sum(scores)/len(scores),2) 
 
-print(getAvgScore('denmark', allUnivs))
+# print(getAvgScore('united kingdom', allUnivs))
 
-# def getRelativeScoreContinent(countryName, allUnivs):
-#     countryName = countryName.upper()
-#     # your code is here
-#     return round(100*avg/max,2)
+def getRelativeScoreContinent(countryName, allUnivs):
+    countryName = countryName.upper()
+    countryAvg = getAvgScore(countryName, allUnivs)
+    continent = None
+    countriesInContinent = []
+    allCountriesScoreOfContinent = []
+    for countryInfo in countries:
+        if countryName == countryInfo[0].upper():
+            continent = countryInfo[5]
+    for countryInfo in countries:
+        if continent == countryInfo[5]:
+            countriesInContinent.append(countryInfo[0])
+    for code in allUnivs:
+        if allUnivs[code][2] in countriesInContinent:
+            allCountriesScoreOfContinent.append(float(allUnivs[code][6]))
+    return round(100*(countryAvg/max(allCountriesScoreOfContinent)), 2)
 
+# print(getRelativeScoreContinent('united kingdom', allUnivs))
 
-# def getUnivWithCapital(countryName, allUnivs):
-#     univsWithCapital=set()
-#     countryName = countryName.upper()
-#     # your code is here
-#     return univsWithCapital
+def getUnivWithCapital(countryName, allUnivs):
+    univsWithCapital=set()
+    countryName = countryName.upper()
+    capital = None
+    for countryInfo in countries:
+        if countryInfo[0].upper() == countryName:
+            capital = countryInfo[1]
+    for code in allUnivs:
+        if capital in allUnivs[code][1]:
+            univsWithCapital.add(code)
+    
+    return univsWithCapital
 
+print(getUnivWithCapital('usa', allUnivs))
 
 # def studyInOnePlace(countryName, degrees, budget,allUnivs):
 #     countryName = countryName.upper()
