@@ -141,30 +141,50 @@ def getUnivWithCapital(countryName, allUnivs):
     for code in allUnivs:
         if capital in allUnivs[code][1]:
             univsWithCapital.add(code)
-    
     return univsWithCapital
 
-print(getUnivWithCapital('usa', allUnivs))
+# print(getUnivWithCapital('usa', allUnivs))
 
-# def studyInOnePlace(countryName, degrees, budget,allUnivs):
-#     countryName = countryName.upper()
-#     codes=set()
-#     degrees = set( [d.upper() for d in degrees])
-#     # your code is here
-#     # return codes
-#     # or
-#     # return [codes]
+def studyInOnePlace(countryName, degrees, budget,allUnivs):
+    countryName = countryName.upper()
+    codes=set()
+    degrees = set([d.upper() for d in degrees])
+    for code in allUnivs:
+        if countryName == allUnivs[code][2].upper():
+            if float(allUnivs[code][5]) <= float(budget):
+                availableDegrees = allUnivs[code][4].upper().split('-')
+                allFound = True
+                for d in degrees:
+                    if d not in availableDegrees:
+                        allFound = False
+                        break
+                if allFound:
+                    codes.add(code)
+    return codes
 
+# print(studyInOnePlace('Japan', ['Diploma', 'PhD'], 25000, allUnivs))
 
-# def studyInTwoPlaces(firstCode, firstDegree,secondCode , secondDegree, budget,allUnivs):
-#     firstDegree = firstDegree.upper()
-#     secondDegree = secondDegree.upper()
-#     firstCode = firstCode.upper()
-#     secondCode = secondCode.upper()
-#     # your code is here
-    
-#     #     return True
-#     # or
-#     #     return False
-#     # or
-#     #     raise ValueError("Something went wrong!")
+def studyInTwoPlaces(firstCode, firstDegree,secondCode , secondDegree, budget,allUnivs):
+    firstDegree = firstDegree.upper()
+    secondDegree = secondDegree.upper()
+    firstCode = firstCode.upper()
+    secondCode = secondCode.upper()
+    totalCost = 0
+    firstDegreeFound = False
+    secondDegreeFound = False
+    for code in allUnivs:
+        if firstCode == code.upper():
+            if firstDegree in allUnivs[code][4].upper().split('-'):
+                firstDegreeFound = True
+                totalCost += float(allUnivs[code][5])
+    for code in allUnivs:
+        if secondCode == code.upper():
+            if secondDegree in allUnivs[code][4].upper().split('-'):
+                secondDegreeFound = True
+                totalCost += float(allUnivs[code][5])
+    if firstDegreeFound and secondDegreeFound:
+        return totalCost <= float(budget)
+    else:
+        return False
+
+print(studyInTwoPlaces('JDBS', 'Diploma', 'OTTE','PhD', 40000, allUnivs))

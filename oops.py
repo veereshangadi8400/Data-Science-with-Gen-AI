@@ -150,37 +150,37 @@
 # audio 'Till2 Title Song' by ‘Mika Singh’...‘ similarly pause() 
 # method will return as False and print ‘Pausing audio 'Tillu2 Title 
 # Song' by ‘Mika Singh’...‘  and same for VideoPlayer class methods.
-class Media:
-    def __init__(self, title, isPlaying = False):
-        self.title, self.isPlaying = title, isPlaying
+# class Media:
+#     def __init__(self, title, isPlaying = False):
+#         self.title, self.isPlaying = title, isPlaying
     
-class AudioPlayer(Media):
-    def __init__(self, title, artist):
-        super().__init__(title, True)
-        self.artist = artist
-    def play(self):
-        self.isPlaying = True
-        print(f'playing audio {self.title} by {self.artist}')
-        return self.isPlaying
-    def pause(self):
-        print(f'pausing audio {self.title} by {self.artist}')
-        return False
+# class AudioPlayer(Media):
+#     def __init__(self, title, artist):
+#         super().__init__(title, True)
+#         self.artist = artist
+#     def play(self):
+#         self.isPlaying = True
+#         print(f'playing audio {self.title} by {self.artist}')
+#         return self.isPlaying
+#     def pause(self):
+#         print(f'pausing audio {self.title} by {self.artist}')
+#         return False
     
-class VideoPlayer(Media):
-    def __init__(self, title, director):
-        super().__init__(title, False)
-        self.director = director
-    def play(self):
-        self.isPlaying = True
-        print('playing audio {self.title} by {self.artist}}')
-        return self.isPlaying
-    def pause(self):
-        print('pausing audio {self.title} by {self.artist}')
-        return False
+# class VideoPlayer(Media):
+#     def __init__(self, title, director):
+#         super().__init__(title, False)
+#         self.director = director
+#     def play(self):
+#         self.isPlaying = True
+#         print('playing audio {self.title} by {self.artist}}')
+#         return self.isPlaying
+#     def pause(self):
+#         print('pausing audio {self.title} by {self.artist}')
+#         return False
 
-audio = AudioPlayer("Tillu2 Title Song", "Mika Singh")
-print(audio.play())  
-print(audio.pause())
+# audio = AudioPlayer("Tillu2 Title Song", "Mika Singh")
+# print(audio.play())  
+# print(audio.pause())
 
 # 12. Write a Python program using classes. Create a class called 
 # temperature_converter with two static methods called 
